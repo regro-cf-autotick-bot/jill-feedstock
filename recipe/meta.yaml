@@ -1,5 +1,5 @@
 {% set name = "jill" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jill-{{ version }}.tar.gz
-  sha256: fbfac07da3892672d09c489cf3be5d31ae38ac22b68ea49b147dbe79e339021b
+  sha256: 885bb1c26e2ac6563828767eb87409dd69581e5f187110b958f4c7dcbe45b27b
 
 build:
   entry_points:
