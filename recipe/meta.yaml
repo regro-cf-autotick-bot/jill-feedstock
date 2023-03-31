@@ -20,6 +20,8 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - poetry-core
+    - poetry
   run:
     - fire
     - jsonschema
