@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jill-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jill-{{ version }}.tar.gz
   sha256: 0e2a3d02b8656b8fb5698f9acdc02204c855c68ad34b88dc0787ad8d349b6b51
 
 build:
@@ -14,18 +14,18 @@ build:
     - jill=jill.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - poetry-core
     - poetry
   run:
     - fire <0.6.0,>=0.5.0
     - jsonschema >=4.17.3
-    - python >=3.7
+    - python >={{ python_min }}
     - python-gnupg >=0.5.0
     - requests >=2.28.2
     - requests-futures >=1.0.0
@@ -41,6 +41,7 @@ test:
     - jill install nightly --confirm
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/johnnychen94/jill.py
